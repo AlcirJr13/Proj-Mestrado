@@ -1,0 +1,10 @@
+--- CRIAR ARQUIVO TXT COM OS ATAQUES
+D:/Documentos/'./Alcir Jr/'/Mestrado/Projeto/opencv/build/x64/vc15/bin/opencv_annotation.exe --annotations=pos.txt --images=img_teste/
+
+
+--- CRIAR EXEMPLOS
+D:/Documentos/'./Alcir Jr/'/Mestrado/Projeto/opencv/build/x64/vc15/bin/opencv_createsamples.exe -info ataque.txt -w 24 -h 24 -num 22412 -vec pos.vec -maxxangle 0 -maxyangle 0 -maxzangle 0
+
+
+--- CRIAR CASCATA
+D:/Documentos/'./Alcir Jr/'/Mestrado/Projeto/opencv/build/x64/vc15/bin/opencv_traincascade.exe -data cascade/ -vec pos.vec -bg normal.txt -w 24 -h 24 -numPos 19050 -numNeg 9525 -numStages 10 -minHitRate 0.999 -maxFalseAlarmRate 0.5
