@@ -9,9 +9,10 @@ import seaborn as sns
 from atom import ATOMClassifier
 from PIL import Image
 
-data = pd.read_csv("D:\Documentos\Mestrado\Projeto\dataset_3.csv")
+data = pd.read_csv("D:/Documentos/Alcir Jr/Mestrado/Projeto/dataset_3.csv")
 print("Leu DATASET")
 
+data = data.drop(columns=['Unnamed: 0'])
 
 columnsAttack = data.columns.values
 columnsNormal = data.columns.values
@@ -39,11 +40,11 @@ normal = normal.drop(columns=['Label2'])
 
 #TRANFORMAR FEATURES EM INT
 print("transformação int")
-attack2 = ((attack.values)/45499)
+attack2 = ((attack.values)/2)
 attack2 = attack2*255
 #attack2=attack2*1000000000000000
 
-normal2 = ((normal.values)/45499)
+normal2 = ((normal.values)/2)
 normal2 = normal2*255
 #normal2=normal2*1000000000000000
 
