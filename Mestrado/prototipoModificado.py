@@ -40,11 +40,11 @@ normal = normal.drop(columns=['Label2'])
 
 #TRANFORMAR FEATURES EM INT
 print("transformação int")
-attack2 = ((attack.values)/2)
+attack2 = (attack.values)
 attack2 = attack2*255
 #attack2=attack2*1000000000000000
 
-normal2 = ((normal.values)/2)
+normal2 = (normal.values)
 normal2 = normal2*255
 #normal2=normal2*1000000000000000
 

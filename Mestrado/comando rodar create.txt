@@ -7,4 +7,4 @@ D:/Documentos/'./Alcir Jr/'/Mestrado/Projeto/opencv/build/x64/vc15/bin/opencv_cr
 
 
 --- CRIAR CASCATA
-D:/Documentos/'./Alcir Jr/'/Mestrado/Projeto/opencv/build/x64/vc15/bin/opencv_traincascade.exe -data cascade/ -vec pos.vec -bg normal.txt -w 24 -h 24 -numPos 19050 -numNeg 9525 -numStages 10 -minHitRate 0.999 -maxFalseAlarmRate 0.5
+D:/Documentos/'./Alcir Jr/'/Mestrado/Projeto/opencv/build/x64/vc15/bin/opencv_traincascade.exe -data cascade/ -vec pos.vec -bg normal.txt -w 24 -h 24 -numPos 19050 -numNeg 9525 -numStages 10 -minHitRate 0.999 -maxFalseAlarmRate 0.5 -weightTrimRate 1.0

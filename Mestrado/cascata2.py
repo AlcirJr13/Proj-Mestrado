@@ -13,7 +13,7 @@ for i in range (10):
   ataque = cv2.imread(Cam_foto)
   prev = cascata.detectMultiScale(
     ataque,
-    scaleFactor=10,
+    scaleFactor=1.01,
     minNeighbors=10,
     minSize=(24,24),
     maxSize=(24,24),
