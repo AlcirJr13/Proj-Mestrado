@@ -17,7 +17,7 @@ def imagem_horizontal():
   return hori
 
 def imagem_vertical():
-  for i in range (20):
+  for i in range (10):
     if i == 0:
       vert = imagem_horizontal()
       continue
@@ -27,8 +27,8 @@ def imagem_vertical():
 
   return vert
 
-for j in range(10):
-  for z in range(10):
+for j in range(5):
+  for z in range(5):
     if z == 0:
       imgFull = imagem_vertical()
       continue

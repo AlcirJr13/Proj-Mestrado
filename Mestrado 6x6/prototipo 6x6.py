@@ -12,13 +12,12 @@ from PIL import Image
 data = pd.read_csv("dataset_descriptor.csv")
 print("Leu DATASET")
 
-columns = columns = ["ip_len_mean","ip_len_median","dport_rte","ip_len_rte","ip_proto",
- "tcp_flags_mean","tcp_flags_median","tcp_flags_rte","sport_rte","sport_cvq",
- "sport_var","sport_std","sport_median","sport_mean","sport_cv",
- "sport_entropy","dport_mean","dport_median","tcp_flags_cvq","tcp_flags_var",
- "tcp_flags_cv","tcp_flags_entropy","tcp_flags_std","ip_len_cv","ip_len_std",
- "ip_len_entropy","ip_len_cvq","ip_len_var","dport_cv","dport_entropy",
- "dport_var","dport_std","dport_cvq","Label2"]
+columns = columns = ["ip_len_mean","ip_len_median","sport_median","sport_mean","tcp_flags_mean",
+"tcp_flags_median","dport_mean","dport_median","sport_rte","tcp_flags_cvq","tcp_flags_cv",
+"tcp_flags_std","ip_len_cv","sport_cvq","sport_cv","ip_len_cvq","sport_std","ip_proto",
+"tcp_flags_var","ip_len_std","sport_entropy","ip_len_rte","sport_var","ip_len_var",
+"dport_cv","tcp_flags_rte","dport_cvq","dport_std","dport_var","dport_rte",
+ "ip_len_entropy","dport_entropy","tcp_flags_entropy","Label2"]
 
 data = data[columns]
 
@@ -30,33 +29,6 @@ for i in range(0,len(data)):
     data.loc[i,'Label2']=1
 data['Label2'] = data['Label2'].astype('int64')
 
-
-#Utilizando modelo ATOM para geração de novas características
-# https://towardsdatascience.com/deep-feature-synthesis-vs-genetic-feature-generation-6ba4d05a6ca5
-
-# https://tvdboom.github.io/ATOM/v4.13/API/ATOM/atomclassifier/
-
-#atom = ATOMClassifier(data, y="Label2", n_rows=1e3, verbose=2)
-#atom = ATOMClassifier(data, y="Label2", n_rows=1, verbose=2)
-#atom.impute()
-#atom.encode()
-
-#Deep Feature Synthesis - DFS
-#print("============================DFS=======================")
-#atom.branch="dfs"
-
-#atom.feature_generation(
-#    strategy="dfs",
-#    n_features=543,
-#    verbose=1,
-#    operators=["add", "mul"],
-#)
-
-#print("======DFS======")
-#print(atom.dataset.head())
-
-#data2=atom.dataset
-#print("data2\n", data2)
 
 columnsAttack = data.columns.values
 columnsNormal = data.columns.values
@@ -83,20 +55,13 @@ normal = normal.drop(columns=['Label2'])
 #TRANFORMAR FEATURES EM INT
 print("transformação int")
 attack2 = attack.values
-attack2=attack2*1000000000000000
+attack2=attack2*255
 normal2 = normal.values
-normal2=normal2*1000000000000000
+normal2=normal2*255
 
 attack2 = attack2.astype('int64')
 normal2 = normal2.astype('int64')
-# print("attack\n", attack2)
-# print("normal\n", normal2)
 
-# #TRANSFORMAR VALORES ENTER 0 E 255 (TONS DE CINZA)
-attack2 = attack2%255
-normal2 = normal2%255
-#print("attack4\n", attack2)
-#print("normal4\n", normal2)
 
 #CRIAÇÃO DAS IMAGENS
 print("CRIA IMAGENS")
