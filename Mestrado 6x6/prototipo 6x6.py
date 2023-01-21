@@ -46,7 +46,7 @@ for i in range(0,len(data)):
   else: #data2[i,'Label2']==1 :
     #print("ATAQUE", i)
     attack.loc[len(attack)] = data.loc[i]
-  #print(i)
+  print(i)
 
 
 attack = attack.drop(columns=['Label2'])
@@ -54,13 +54,13 @@ normal = normal.drop(columns=['Label2'])
 
 #TRANFORMAR FEATURES EM INT
 print("transformação int")
-attack2 = attack.values
-attack2=attack2*255
-normal2 = normal.values
-normal2=normal2*255
+attack2 = attack.values*255
+attack2=attack2
+normal2 = normal.values*255
+normal2=normal2
 
-attack2 = attack2.astype('int64')
-normal2 = normal2.astype('int64')
+#attack2 = attack2.astype('int64')
+#normal2 = normal2.astype('int64')
 
 
 #CRIAÇÃO DAS IMAGENS

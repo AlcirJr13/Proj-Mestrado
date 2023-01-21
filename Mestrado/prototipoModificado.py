@@ -40,24 +40,17 @@ normal = normal.drop(columns=['Label2'])
 
 #TRANFORMAR FEATURES EM INT
 print("transformação int")
-attack2 = (attack.values)
-attack2 = attack2*255
-#attack2=attack2*1000000000000000
+attack2 = (attack.values)*255
+attack2 = attack2
 
-normal2 = (normal.values)
-normal2 = normal2*255
-#normal2=normal2*1000000000000000
 
-attack2 = attack2.astype('int64')
-normal2 = normal2.astype('int64')
-# print("attack\n", attack2)
-# print("normal\n", normal2)
+normal2 = (normal.values)*255
+normal2 = normal2
 
-# #TRANSFORMAR VALORES ENTER 0 E 255 (TONS DE CINZA)
-#attack2 = attack2%256
-#normal2 = normal2%256
-#print("attack4\n", attack2)
-#print("normal4\n", normal2)
+
+#attack2 = attack2.astype('int64')
+#normal2 = normal2.astype('int64')
+
 
 #CRIAÇÃO DAS IMAGENS
 print("CRIA IMAGENS")
