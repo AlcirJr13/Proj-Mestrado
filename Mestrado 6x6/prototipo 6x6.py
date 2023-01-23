@@ -64,8 +64,9 @@ normal2=normal2
 
 
 #CRIAÇÃO DAS IMAGENS
-print("CRIA IMAGENS")
+print("CRIAR IMAGENS")
 for i in range(0,len(attack2)):
+  print('ataque ' + (i+1))
   attack3 = [attack2[i]]
   attack4 =np.resize(attack3,(6,6))
   attack4 = np.array(attack4,np.uint8)
@@ -79,6 +80,7 @@ for i in range(0,len(attack2)):
     info.read()
 
 for i in range(0,len(normal2)):
+  print('normal ' + (i+1))
   normal3 = [normal2[i]]
   normal4 =np.resize(normal3,(6,6))
   normal4 = np.array(normal4,np.uint8)

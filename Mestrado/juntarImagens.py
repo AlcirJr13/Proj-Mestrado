@@ -5,7 +5,8 @@ import random
 def imagem_horizontal():
   x = random.randint(1,22400)
   #des_img = ('ataques/ataque'+(str(x))+'.png')
-  des_img = ('normal/normal'+(str(x))+'.png')
+  #des_img = ('normal/normal'+(str(x))+'.png')
+  des_img = ('faces24x24/'+(str(1))+'.png')
   img1 = cv2.imread(des_img)
   x = random.randint(1,22400)
   des_img = ('ataques/ataque'+(str(x))+'.png')

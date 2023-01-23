@@ -15,8 +15,8 @@ for i in range (10):
     ataque,
     scaleFactor=1.01,
     minNeighbors=3,
-    minSize=(6,6),
-    maxSize=(6,6),
+    minSize=(7,7),
+    maxSize=(7,7),
     flags=0
   )
   if len(prev) == 0:
