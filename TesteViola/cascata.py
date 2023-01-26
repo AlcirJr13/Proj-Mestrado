@@ -20,10 +20,10 @@ for i in range (400):
   #prev = cascata.detectMultiScale(ataque)
   prev = cascata.detectMultiScale(
     ataque,
-    scaleFactor=1.35,
-    minNeighbors=6,
-    minSize=(100,200),
-    maxSize=(270,370),
+    scaleFactor=1.01,
+    minNeighbors=3,
+    minSize=(360,260),
+    maxSize=(360,260),
     flags=0
   )
   if len(prev) == 0:
