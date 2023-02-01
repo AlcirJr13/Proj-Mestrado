@@ -3,14 +3,14 @@ import numpy as np
 import random
 
 def imagem_horizontal():
-  x = random.randint(1,22400)
-  #des_img = ('ataques/ataque'+(str(x))+'.png')
-  #des_img = ('normal/normal'+(str(x))+'.png')
-  des_img = ('faces24x24/'+(str(1))+'.png')
-  img1 = cv2.imread(des_img)
-  x = random.randint(1,22400)
+  x = random.randint(1,15000)
   des_img = ('ataques/ataque'+(str(x))+'.png')
   #des_img = ('normal/normal'+(str(x))+'.png')
+  #des_img = ('faces24x24/'+(str(1))+'.png')
+  img1 = cv2.imread(des_img)
+  x = random.randint(1,15000)
+  #des_img = ('ataques/ataque'+(str(x))+'.png')
+  des_img = ('normal/normal'+(str(x))+'.png')
   img2 = cv2.imread(des_img)
 
   hori = np.concatenate((img1, img2), axis=1)

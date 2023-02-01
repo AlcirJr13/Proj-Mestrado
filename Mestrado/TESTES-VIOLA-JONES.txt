@@ -1,0 +1,39 @@
+Teste 1
+
+D:/Documentos/'./Alcir Jr/'/Mestrado/Projeto/opencv/build/x64/vc15/bin/opencv_createsamples.exe -info ataque.txt -w 20 -h 20 -num 22412 -vec pos.vec -maxxangle 0 -maxyangle 0 -maxzangle 0
+
+D:/Documentos/'./Alcir Jr/'/Mestrado/Projeto/opencv/build/x64/vc15/bin/opencv_traincascade.exe -data cascade/ -vec pos.vec -bg normal.txt -w 20 -h 20 -numPos 15000 -numNeg 20000 -numStages 10 -minHitRate 0.999 -maxFalseAlarmRate 0.3 -weightTrimRate 1.0
+
+prev = cascata.detectMultiScale(
+    ataque,
+    scaleFactor=1.01,
+    minNeighbors=10,
+    minSize=(15,15),
+    maxSize=(26,26),
+    flags=0
+  )
+
+encontramos 115 Verdadeiros positivos
+encontramos 6385 Falsos negativos
+encontramos 7150 Verdadeiros negativos
+encontramos 0 Falsos positivos
+
+Teste 2
+
+D:/Documentos/'./Alcir Jr/'/Mestrado/Projeto/opencv/build/x64/vc15/bin/opencv_createsamples.exe -info ataque.txt -w 20 -h 20 -num 22412 -vec pos.vec -maxxangle 0 -maxyangle 0 -maxzangle 0
+
+D:/Documentos/'./Alcir Jr/'/Mestrado/Projeto/opencv/build/x64/vc15/bin/opencv_traincascade.exe -data cascade/ -vec pos.vec -bg normal.txt -w 20 -h 20 -numPos 15000 -numNeg 20000 -numStages 10 -minHitRate 0.999 -maxFalseAlarmRate 0.2 -weightTrimRate 1.
+
+prev = cascata.detectMultiScale(
+    ataque,
+    scaleFactor=1.01,
+    minNeighbors=5,
+    minSize=(20,20),
+    maxSize=(25,25),
+    flags=0
+  )
+
+encontramos 20 Verdadeiros positivos
+encontramos 6480 Falsos negativos
+encontramos 7150 Verdadeiros negativos
+encontramos 0 Falsos positivos

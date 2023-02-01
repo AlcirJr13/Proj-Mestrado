@@ -14,9 +14,9 @@ for i in range (10):
   prev = cascata.detectMultiScale(
     ataque,
     scaleFactor=1.01,
-    minNeighbors=10,
-    minSize=(24,24),
-    maxSize=(24,24),
+    minNeighbors=5,
+    minSize=(20,20),
+    maxSize=(25,25),
     flags=0
   )
   if len(prev) == 0:
