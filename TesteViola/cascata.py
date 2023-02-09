@@ -22,8 +22,8 @@ for i in range (400):
     ataque,
     scaleFactor=1.01,
     minNeighbors=3,
-    minSize=(360,260),
-    maxSize=(360,260),
+    minSize=(100,200),
+    maxSize=(270,370),
     flags=0
   )
   if len(prev) == 0:
