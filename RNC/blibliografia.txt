@@ -5,3 +5,8 @@ https://www.deeplearningbook.com.br/reconhecimento-de-imagens-com-redes-neurais-
 https://www.deeplearningbook.com.br/reconhecimento-de-imagens-com-redes-neurais-convolucionais-em-python-parte-3/
 
 https://www.deeplearningbook.com.br/reconhecimento-de-imagens-com-redes-neurais-convolucionais-em-python-parte-4/
+
+
+https://www.tensorflow.org/tutorials/keras/classification?hl=pt-br
+
+https://sigmoidal.ai/redes-neurais-convolucionais-python/

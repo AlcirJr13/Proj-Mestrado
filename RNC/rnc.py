@@ -1,28 +1,21 @@
-import tensorflow as tf
-print("Versão do TensorFlow:", tf.__version__)
+# importar as bibliotecas necessárias
+from sklearn.datasets import fetch_openml
+import matplotlib.pyplot as plt
+import numpy as np
 
-import keras as K
-print("Versão do Keras:", K.__version__)
+# importar o conjunto de dados MNIST
+dataset = fetch_openml("MNIST Original")
+(data, labels) = (dataset.data, dataset.target)
 
-from keras.models import Sequential
-from keras.layers import Conv2D
-from keras.layers import MaxPooling2D
-from keras.layers import Flatten
-from keras.layers import Dense
+# Exibir algumas informações do dataset MNIST
+print("[INFO] Número de imagens: {}".format(data.shape[0]))
+print("[INFO] Pixels por imagem: {}".format(data.shape[1]))
 
-# Inicializando a Rede Neural Convolucional
-classifier = Sequential()
+# escolher um índice aleatório do dataset e exibir
+# a imagem e label correspondente
+np.random.seed(17)
+randomIndex = np.random.randint(0, data.shape[0])
+print("[INFO] Imagem aleatória do MNIST com label '{:.0f}':".format(labels[randomIndex]))
 
-# Passo 1 - Primeira Camada de Convolução
-classifier.add(Conv2D(32, (3, 3), input_shape = (6, 6, 1), activation = 'relu'))
-
-# Passo 2 - Pooling
-classifier.add(MaxPooling2D(pool_size = (2, 2)))
-
-# Adicionando a Segunda Camada de Convolução
-classifier.add(Conv2D(32, (3, 3), activation = 'relu'))
-
-classifier.add(MaxPooling2D(pool_size = (2, 2)))
-
-# Passo 3 - Flattening
-classifier.add(Flatten())
+plt.imshow(data[randomIndex].reshape((28,28)), cmap="Greys")
+plt.show()
